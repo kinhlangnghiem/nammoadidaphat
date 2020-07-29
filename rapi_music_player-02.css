@@ -1,0 +1,171 @@
+/* Rapi Music Player Styles
+================================================== */
+
+.rapi_music_player {
+    padding: 0;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #fff;
+    box-shadow: -2px 2px 2px #c0c0c0;
+}
+
+.rapi_music_player .music_cover img {
+    border-radius: 50%;
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    display: table;
+    z-index: 1;
+    position: relative;
+}
+
+.rapi_music_player audio {
+    margin: 0 15px 0 14px;
+    width: 670px;
+}
+
+.rapi_music_player #audiowrap,
+.rapi_music_player #plwrap {
+    margin: 0 auto;
+}
+
+.rapi_music_player .tracks {
+    position: relative;
+    text-align: center;
+}
+
+.rapi_music_player #nowPlay {
+    display: inline;
+}
+
+.rapi_music_player #npAction {
+    padding: 21px;
+    position: absolute;
+}
+
+.rapi_music_player #npTitle {
+    padding: 21px;
+}
+
+.rapi_music_player ul.plList {
+    padding: 0 !important;
+    margin: 10px 0 !important;
+}
+
+.rapi_music_player .plList li {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+}
+
+.rapi_music_player .plList li:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.rapi_music_player .plItem {
+    position: relative;
+}
+
+.rapi_music_player .plTitle {
+    left: 40px;
+    overflow: hidden;
+    position: absolute;
+    right: 65px;
+    text-overflow: ellipsis;
+    top: 0;
+    white-space: nowrap;
+}
+
+.rapi_music_player .plNum {
+    padding-left: 20px;
+    width: 25px;
+}
+
+.rapi_music_player .plLength {
+    padding-left: 21px;
+    position: absolute;
+    right: 21px;
+    top: 0;
+}
+
+.rapi_music_player .plSel,
+.rapi_music_player .plSel:hover {
+    background-color: rgba(0, 0, 0, .2);
+    color: #fff;
+    cursor: default !important;
+}
+
+.rapi_music_player .plyr--playing .plyr__controls [data-plyr="pause"], .rapi_music_player .plyr__controls [data-plyr="play"] {
+    display: none;
+}
+
+/* Plyr Overrides
+================================================== */
+
+.rapi_music_player .plyr--audio .plyr__controls {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 20px 20px 20px 13px;
+    width: 100%;
+}
+
+.rapi_music_player .plyr--audio .plyr__controls button.tab-focus:focus,
+.rapi_music_player .plyr--audio .plyr__controls button:hover,
+.rapi_music_player .plyr__play-large {
+    background: rgba(0, 0, 0, .1);
+}
+
+.rapi_music_player .plyr__progress--played, .rapi_music_player .plyr__volume--display {
+    color: rgba(0, 0, 0, .1);
+}
+
+.rapi_music_player .plyr--audio .plyr__progress--buffer,
+.rapi_music_player .plyr--audio .plyr__volume--display {
+    background: rgba(0, 0, 0, .1);
+}
+
+.rapi_music_player .plyr--audio .plyr__progress--buffer {
+    color: rgba(0, 0, 0, .1);
+}
+
+.rapi_music_player .tracks {
+    margin: 10px 0 30px 0;
+}
+
+.rapi_music_player #btnPlay img, .rapi_music_player #btnPause img {
+    width: 100px;
+    margin: 0 10px;
+}
+
+.rapi_music_player #btnPrev img, .rapi_music_player #btnNext img {
+    width: 50px;
+    margin: 0 10px;
+}
+
+.rapi_music_player #btnNext img {
+    transform: rotate(180deg);
+}
+
+.rapi_music_player a:focus {
+    outline: none;
+    color: #fff;
+}
+
+.rapi_music_player .plList li {
+    color: #fff;
+}
+
+@media only screen and (max-width: 400px) {
+    .rapi_music_player #btnPlay img, .rapi_music_player #btnPause img {
+		width: 60px;
+	}
+	.rapi_music_player #btnPrev img, .rapi_music_player #btnNext img {
+		width: 30px;
+	}
+}

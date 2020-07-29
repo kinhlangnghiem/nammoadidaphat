@@ -1,0 +1,1 @@
+	!function(t){t.fn.equalHeights=function(e){var a=0,i=t(this),n=function(){var e=t(this).innerHeight();e>a&&(a=e)};if(e=e||{},i.each(n),!e.wait)return i.css('min-height',a);var h=setInterval(function(){return a>0?(clearInterval(h),i.css('min-height',a)):void i.each(n)},100)},t('[data-equal]').each(function(){var e=t(this),a=e.data('equal');e.find(a).equalHeights()})}(jQuery);
