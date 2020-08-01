@@ -1,0 +1,473 @@
+
+
+
+
+
+<title>CodePen - Responsive Audio Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Start: injected by Adguard -->
+
+<!-- Start: injected by Adguard -->
+<script src="//local.adguard.com/adguard-ajax-api/injections/content-script.js?ts=63731918089155&amp;domain=kinhlangnghiem.github.io&amp;mask=111" nonce="88c0c0324e6040f0a388ff7ebee4d989" type="text/javascript"></script>
+<script src="//local.adguard.com/adguard-ajax-api/injections/userscripts.js?ts=63731689031968&name=Adguard%20Assistant&name=Popup%20Blocker%20by%20AdGuard" nonce="88c0c0324e6040f0a388ff7ebee4d989" type="text/javascript"></script>
+
+<!-- End: injected by Adguard -->
+<script src="//local.adguard.com/adguard-ajax-api/injections/content-script.js?ts=63731689034557&amp;domain=kinhlangnghiem.github.io&amp;mask=111" nonce="88c0c0324e6040f0a388ff7ebee4d989" type="text/javascript"></script>
+<script src="//local.adguard.com/adguard-ajax-api/injections/userscripts.js?ts=63731689031968&name=Adguard%20Assistant&name=Popup%20Blocker%20by%20AdGuard" nonce="88c0c0324e6040f0a388ff7ebee4d989" type="text/javascript"></script>
+
+<!-- End: injected by Adguard -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdn.plyr.io/3.5.6/plyr.css'>
+<style>
+/* Font Family
+================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+
+
+/* Global Styles
+================================================== */
+
+html,body {
+-webkit-font-smoothing:antialiased;
+-webkit-text-size-adjust:100%;
+background-color:#0665a2;
+color:#fff;
+font-size:1rem;
+font-family:"Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight:400;
+letter-spacing:.025rem;
+line-height:1.618;
+padding:1rem 0;
+}
+
+*,::before,::after {
+box-sizing:border-box;
+}
+
+* {
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-webkit-tap-highlight-color:transparent;
+}
+
+
+/* Setup
+================================================== */
+
+.container { position:relative; margin:0 auto; max-width:800px; width:100%; }
+.column { width:inherit; }
+
+
+/* Typography / Links
+================================================== */
+
+p { color:#fff; display:block; font-size:.9rem; font-weight:400; margin:0 0 2px; }
+
+a,a:visited { color:#8cc3e6; outline:0; text-decoration:underline; }
+a:hover,a:focus { color:#bbdef5; }
+p a,p a:visited { line-height:inherit; }
+
+
+/* Misc.
+================================================== */
+
+.add-bottom { margin-bottom:2rem !important; }
+.left { float:left; }
+.right { float:right; }
+.center { text-align:center; }
+.hidden { display:none; }
+
+.no-support {
+margin:2rem auto;
+text-align:center;
+width:90%;
+}
+
+
+/* Audio Player Styles
+================================================== */
+
+audio {
+display:none;
+}
+
+#audiowrap,
+#plwrap {
+margin:0 auto;
+}
+
+#tracks {
+font-size:0;
+position:relative;
+text-align:center;
+}
+
+#nowPlay {
+display:block;
+font-size:0;
+}
+
+#nowPlay span {
+display:inline-block;
+font-size:1.05rem;
+vertical-align:top;
+}
+
+#nowPlay span#npAction {
+padding:21px;
+width:30%;
+}
+
+#nowPlay span#npTitle {
+padding:21px;
+text-align:right;
+width:70%;
+}
+
+#plList li {
+cursor:pointer;
+display:block;
+margin:0;
+padding:21px 0;
+}
+
+#plList li:hover {
+background-color:rgba(0,0,0,.1);
+}
+
+.plItem {
+position:relative;
+}
+
+.plTitle {
+left:50px;
+overflow:hidden;
+position:absolute;
+right:65px;
+text-overflow:ellipsis;
+top:0;
+white-space:nowrap;
+}
+
+.plNum {
+padding-left:21px;
+width:25px;
+}
+
+.plLength {
+padding-left:21px;
+position:absolute;
+right:21px;
+top:0;
+}
+
+.plSel,
+.plSel:hover {
+background-color:rgba(0,0,0,.1);
+color:#fff;
+cursor:default !important;
+}
+
+#tracks a {
+border-radius:3px;
+color:#fff;
+cursor:pointer;
+display:inline-block;
+font-size:2.3rem;
+height:35px;
+line-height:.175;
+margin:0 5px 30px;
+padding:10px 15px;
+text-decoration:none;
+transition:background .3s ease;
+}
+
+#tracks a:last-child {
+margin-left:0;
+}
+
+#tracks a:hover,
+#tracks a:active {
+background-color:rgba(0,0,0,.1);
+color:#fff;
+}
+
+#tracks a::-moz-focus-inner {
+border:0;
+padding:0;
+}
+
+
+/* Plyr Overrides
+================================================== */
+
+.plyr--audio .plyr__controls {
+background-color:transparent;
+border:none;
+color:#fff;
+padding:20px 20px 20px 13px;
+width:100%;
+}
+
+a.plyr__controls__item.plyr__control:hover,
+.plyr--audio .plyr__controls button:hover,
+.plyr--audio .plyr__controls button.tab-focus:focus,
+.plyr__play-large {
+background-color:rgba(0,0,0,.1);
+}
+
+.plyr__progress--played,
+.plyr__volume--display {
+color:rgba(0,0,0,.1);
+}
+
+.plyr--audio .plyr__progress--buffer,
+.plyr--audio .plyr__volume--display {
+background:rgba(0,0,0,.1);
+}
+
+.plyr--audio .plyr__progress--buffer {
+color:rgba(0,0,0,.1);
+}
+
+
+/* Media Queries
+================================================== */
+
+@media only screen and (max-width:600px) {
+    #nowPlay span#npAction { display:none; }
+    #nowPlay span#npTitle { display:block; text-align:center; width:100%; }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="container">
+<div class="column add-bottom">
+<div id="mainwrap">
+<div id="nowPlay">
+<span id="npAction">Paused...</span><span id="npTitle"></span>
+</div>
+<div id="audiowrap">
+<div id="audio0">
+<audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
+</div>
+<div id="tracks">
+<a id="btnPrev">&vltri;</a><a id="btnNext">&vrtri;</a>
+</div>
+</div>
+<div id="plwrap">
+<ul id="plList"></ul>
+</div>
+</div>
+</div>
+<div class="column add-bottom center">
+</div>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html5media/1.1.8/html5media.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.min.js'></script>
+<script id="rendered-js">
+// Mythium Archive: https://archive.org/details/mythium/
+
+jQuery(function ($) {
+  'use strict';
+  var supportsAudio = !!document.createElement('audio').canPlayType;
+  if (supportsAudio) {
+    // initialize plyr
+    var player = new Plyr('#audio1', {
+      controls: [
+      'restart',
+      'play',
+      'progress',
+      'current-time',
+      'duration',
+      'mute',
+      'volume',
+      'download'] });
+
+
+    // initialize playlist and controls
+    var index = 0,
+    playing = false,
+    mediaPath = 'https://stream4.mixcloud.com/secure/',
+    extension = '',
+    tracks = [{
+      "track": 1,
+      "name": "Cuộc Đời Và Đạo Nghiệp Của Hòa Thượng Tuyên Hóa",
+      "duration": "10:49:18",
+      "file": "c/originals/a/9/0/7/6ac8-c4c4-446c-b41e-f0611d8762e1.mp3?sig=_RM--j8k0xsGWIa4S7ALEw" },
+    {
+      "track": 2,
+      "name": "Khai Thị Quyển 06 - Hòa Thượng Tuyên Hóa",
+      "duration": "4:47:29",
+      "file": "/c/m4a/64/0/5/d/4/7eee-92e3-47f2-8822-5eed5e015c2c.m4a?sig=dpKWqvRXulaDeN0WlCSTSg" },
+    {
+      "track": 3,
+      "name": "Khai Thị Quyển 05 - Hòa Thượng Tuyên Hóa",
+      "duration": "6:33:13",
+      "file": "c/m4a/64/f/c/6/2/c75b-4d14-4033-acc5-a7fa6b0b066e.m4a?sig=DKoryjQP77QhvGIRorRKVA" },
+    {
+      "track": 4,
+      "name": "Khai Thị Quyển 04 - Hòa Thượng Tuyên Hóa",
+      "duration": "5:11:22",
+      "file": "/c/m4a/64/1/b/e/4/6d7d-70a4-458b-923e-ea23d0c156c9.m4a?sig=MiM2SczAtb2_7nuebhNQIg" },
+    {
+      "track": 5,
+      "name": "Khai Thị Quyển 03 - Hòa Thượng Tuyên Hóa",
+      "duration": "4:39:39",
+      "file": "c/m4a/64/1/5/b/5/8130-11b2-4add-a1a9-18088e6e7370.m4a?sig=KGpA0ZsT5RBRiC5woj27FQ" },
+    {
+      "track": 6,
+      "name": "Khai Thị Quyển 02 - Hòa Thượng Tuyên Hóa ",
+      "duration": "2:19:42",
+      "file": "c/m4a/64/0/d/0/1/5543-41ec-4c9c-bb60-b9f88c893982.m4a?sig=r04u_J0cymGhOYcl0CPVgQ" },
+    {
+      "track": 7,
+      "name": "Khai Thị Quyển 01 - Hòa Thượng Tuyên Hóa  ",
+      "duration": "1:44:02",
+      "file": "c/m4a/64/a/1/3/0/9c6b-ec2f-46fc-9202-7e46bd1c7b9f.m4a?sig=bmsKFmrbMm3g8pmQJcuuBA" },
+    {
+      "track": 8,
+      "name": "Ngữ Lục Của Hòa Thượng Tuyên Hóa ",
+      "duration": "4:55:26",
+      "file": "c/m4a/64/9/f/e/0/5d55-3b37-4940-9fcd-937b3b5d8d7a.m4a?sig=gnbHbrnv6ZhrlU4D5QTAhQ" },
+    {
+      "track": 9,
+      "name": "Lời Vàng Ngọc của Ngài Tuyên Hoá Thượng Nhân ",
+      "duration": "3:46:42",
+      "file": "c/m4a/64/9/d/f/6/036c-fc8d-4fc5-b698-173734fd224e.m4a?sig=FL9oiwkLNFKfT1Gf-4dEIg" },
+    {
+      "track": 10,
+      "name": "Chú Đại Bi Hòa Thượng Tuyên Hóa Giảng Giải ",
+      "duration": "2:58:32",
+      "file": "c/m4a/64/7/9/0/e/0ec2-f18a-458d-ad59-e01afbe77dae.m4a?sig=qigQuvBTVi1ZcjJjXbm1Xg" },
+    {
+      "track": 11,
+      "name": "Kinh A Di Đà Hòa Thượng Tuyên Hóa Giảng Giải",
+      "duration": "5:14:01",
+      "file": "c/m4a/64/a/3/9/9/d6ee-8ef2-451d-8c98-069179af3ecd.m4a?sig=lxHkWxHMJiQWwHotiQRkog" },
+    {
+      "track": 12,
+      "name": "Kinh Kim Cang 1 Hòa Thượng bTuyên Hóa Giảng Giải",
+      "duration": "4:32:09",
+      "file": "m4a/64/3/a/4/4/5c20-7bb5-4647-9945-25dbf9530999.m4a?sig=OMD-JLIWQgaZivIXk3t8XQ" },
+    {
+      "track": 13,
+      "name": "Kinh Kim Cang 2 Hòa Thượng Tuyên Hóa Giảng Giải",
+      "duration": "6:12:27",
+      "file": "m4a/64/a/1/a/a/a4a3-a52e-4987-bb0e-479c5278f28f.m4a?sig=hb0bh6Q4_zfjnbbHEiRIdQ" },
+    {
+      "track": 14,
+      "name": "Chú Lăng Nghiêm Hòa Thượng Tuyên Hóa Giảng Giải",
+      "duration": "1:19:21",
+      "file": "m4a/64/e/7/4/f/d8c6-fb1c-44a5-affe-152ddf5249b1.m4a?sig=7xcNhEHK6qfZdjhg6txvVQ" }],
+
+    buildPlaylist = $.each(tracks, function (key, value) {
+      var trackNumber = value.track,
+      trackName = value.name,
+      trackDuration = value.duration;
+      if (trackNumber.toString().length === 1) {
+        trackNumber = '0' + trackNumber;
+      }
+      $('#plList').append('<li> \
+                    <div class="plItem"> \
+                        <span class="plNum">' + trackNumber + '.</span> \
+                        <span class="plTitle">' + trackName + '</span> \
+                        <span class="plLength">' + trackDuration + '</span> \
+                    </div> \
+                </li>');
+    }),
+    trackCount = tracks.length,
+    npAction = $('#npAction'),
+    npTitle = $('#npTitle'),
+    audio = $('#audio1').on('play', function () {
+      playing = true;
+      npAction.text('Đang Chạy ...');
+    }).on('pause', function () {
+      playing = false;
+      npAction.text('Paused...');
+    }).on('ended', function () {
+      npAction.text('Paused...');
+      if (index + 1 < trackCount) {
+        index++;
+        loadTrack(index);
+        audio.play();
+      } else {
+        audio.pause();
+        index = 0;
+        loadTrack(index);
+      }
+    }).get(0),
+    btnPrev = $('#btnPrev').on('click', function () {
+      if (index - 1 > -1) {
+        index--;
+        loadTrack(index);
+        if (playing) {
+          audio.play();
+        }
+      } else {
+        audio.pause();
+        index = 0;
+        loadTrack(index);
+      }
+    }),
+    btnNext = $('#btnNext').on('click', function () {
+      if (index + 1 < trackCount) {
+        index++;
+        loadTrack(index);
+        if (playing) {
+          audio.play();
+        }
+      } else {
+        audio.pause();
+        index = 0;
+        loadTrack(index);
+      }
+    }),
+    li = $('#plList li').on('click', function () {
+      var id = parseInt($(this).index());
+      if (id !== index) {
+        playTrack(id);
+      }
+    }),
+    loadTrack = function (id) {
+      $('.plSel').removeClass('plSel');
+      $('#plList li:eq(' + id + ')').addClass('plSel');
+      npTitle.text(tracks[id].name);
+      index = id;
+      audio.src = mediaPath + tracks[id].file + extension;
+      updateDownload(id, audio.src);
+    },
+    updateDownload = function (id, source) {
+      player.on('loadedmetadata', function () {
+        $('a[data-plyr="download"]').attr('href', source);
+      });
+    },
+    playTrack = function (id) {
+      loadTrack(id);
+      audio.play();
+    };
+    extension = audio.canPlayType('audio/mpeg') ? '' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
+    loadTrack(index);
+  } else {
+    // no audio support
+    $('.column').addClass('hidden');
+    var noSupport = $('#audio1').text();
+    $('.container').append('<p class="no-support">' + noSupport + '</p>');
+  }
+});
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>
