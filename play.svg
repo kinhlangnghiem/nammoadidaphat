@@ -1,29 +1,39 @@
 
-<?xml version="1.0"?><svg width="50.389106999999996" height="50.307026" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <filter id="filter6084">
-   <feGaussianBlur id="feGaussianBlur6086" stdDeviation="1.54827"/>
-  </filter>
-  <linearGradient y2="0.358813" x2="0.564058" y1="0.945065" x1="0.672185" id="linearGradient9542" xlink:href="#linearGradient5037"/>
-  <linearGradient y2="1.000025" x2="0.499979" y1="-0.000027" x1="0.499979" id="linearGradient9540" xlink:href="#linearGradient5037"/>
-  <linearGradient id="linearGradient5037">
-   <stop stop-color="#ffffff" offset="0" id="stop5039"/>
-   <stop stop-color="#ffffff" stop-opacity="0" offset="1" id="stop5041"/>
-  </linearGradient>
- </defs>
- <metadata id="metadata9558">image/svg+xml</metadata>
- <g>
-  <title>Layer 1</title>
-  <g id="layer1">
-   <g transform="matrix(0.67755, 0, 0, 0.6764, -394.662, 131.968)" id="Play">
-    <path fill="#007fff" fill-rule="nonzero" stroke="#0000ff" stroke-width="2.954319" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" id="path9472" d="m655.378235,-157.916489a35.708889,35.708889 0 1 1 -0.007568,-0.736099"/>
-    <g id="g9474">
-     <path opacity="0.5" fill="#000000" fill-rule="nonzero" stroke="#000000" stroke-width="3.076" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" filter="url(#filter6084)" id="path9476" d="m606.903137,-175.694931l0,38.324768l32.936707,-19.016022l-32.936707,-19.308746z"/>
-     <path fill="#ffffff" fill-rule="nonzero" stroke="#0000ff" stroke-width="3.076191" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" d="m605.135315,-177.462708l0,38.324783l32.936768,-19.016037l-32.936768,-19.308746z" id="path9478"/>
-    </g>
-    <path fill="url(#linearGradient9540)" fill-rule="nonzero" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" id="path9480" d="m643.529114,-172.41217a24.041634,18.561558 0 1 1 -48.083252,0a24.041634,18.561558 0 1 1 48.083252,0z"/>
-    <path fill="url(#linearGradient9542)" fill-rule="nonzero" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" d="m589.937256,-143.503815c7.101196,15.797859 25.442444,23.423035 41.752808,17.048027c16.301514,-6.371513 24.611938,-24.397179 19.136353,-40.816124c-4.424072,11.105881 -13.273682,20.410995 -25.277954,25.102905c-12.015869,4.696487 -24.822144,3.840927 -35.611206,-1.334808z" id="path9482"/>
-   </g>
-  </g>
- </g>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<polygon style="fill:#FFFFFF;" points="187.368,146.928 187.368,355.8 382.992,251.368 "/>
+<path style="fill:#DB2B42;" d="M256,0.376C114.616,0.376,0,114.824,0,256s114.616,255.624,256,255.624S512,397.176,512,256
+	S397.384,0.376,256,0.376z M184.496,146.928l195.624,104.44L184.496,355.8V146.928z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
 </svg>
