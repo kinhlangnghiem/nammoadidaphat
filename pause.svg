@@ -1,2 +1,14 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><path d="m32 2c-16.568 0-30 13.432-30 30 0 16.569 13.432 30 30 30s30-13.431 30-30c0-16.568-13.432-30-30-30m-4 48h-8v-36h8v36m16 0h-8v-36h8v36" fill="#00acc1"/></svg>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 44 44" enable-background="new 0 0 44 44" width="512px" height="512px">
+  <g>
+    <g>
+      <path fill-rule="evenodd" d="m14,4h-2c-0.553,0-1,0.447-1,1v5c0,0.553 0.447,1 1,1 0.553,0 1-0.447 1-1v-4h1c0.553,0 1-0.447 1-1 0-0.553-0.447-1-1-1zm18,0h-2c-0.553,0-1,0.447-1,1v5c0,0.553 0.447,1 1,1 0.553,0 1-0.447 1-1v-4h1c0.553,0 1-0.447 1-1 0-0.553-0.447-1-1-1z" fill="#FFFFFF"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <path fill-rule="evenodd" d="m18,0h-10c-0.553,0-1,0.447-1,1v42c0,0.553 0.447,1 1,1h10c0.553,0 1-0.447 1-1v-42c0-0.553-0.447-1-1-1zm-1,42h-8v-40h8v40zm19-42h-10c-0.553,0-1,0.447-1,1v42c0,0.553 0.447,1 1,1h10c0.553,0 1-0.447 1-1v-42c0-0.553-0.447-1-1-1zm-1,42h-8v-40h8v40z" fill="#FFFFFF"/>
+    </g>
+  </g>
+</svg>
