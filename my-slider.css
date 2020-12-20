@@ -9,7 +9,7 @@
   -ms-user-select: none;
   user-select: none;
   cursor: default;
-  z-index: 4;
+  z-index: 9;
   background-color: rgba(0, 0, 0, 0.1);
   -webkit-animation: ism-fadein 13s;
   -webkit-background-clip: padding-box;
@@ -178,7 +178,7 @@ a.ism-caption:hover {
   -webkit-background-size: 120% auto; -moz-background-size: 120% auto; -o-background-size: 120% auto; background-size: 120% auto;
   background-position: center center;
   background-repeat: no-repeat;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 1.1);
   opacity: 1.8;
 }
 
@@ -188,8 +188,8 @@ a.ism-caption:hover {
 }
 
 .ism-radios-as-thumbnails li.active label {
-  border: 2px solid rgba(255, 255, 255, 1.0);
-  opacity: 2;
+  border: 2px solid rgba(255, 255, 255, 2.0);
+  opacity: 6;
 }
 
 p.ism-badge {
@@ -214,17 +214,17 @@ p.ism-badge a.ism-link:hover {
 }
 
 .ism-zoom-in {
-  -webkit-animation: zoomin 0.81s linear 1;
-  animation: zoomin 0.81s linear 1;
+  -webkit-animation: zoomin 1.81s linear 3;
+  animation: zoomin 1.81s linear 2;
 }
 
 @-webkit-keyframes zoomin {
-  0% { -webkit-transform: scale(1.0); transform: scale(1.0); }
-  100% { -webkit-transform: scale(3.0); transform: scale(3.0); }
+  0% { -webkit-transform: scale(12.0); transform: scale(12.0); }
+  100% { -webkit-transform: scale(6.0); transform: scale(3.0); }
 }
 @keyframes zoomin {
-  0% { -webkit-transform: scale(1.0); transform: scale(1.0); }
-  100% { -webkit-transform: scale(3.0); transform: scale(3.0); }
+  0% { -webkit-transform: scale(1.0); transform: scale(2.0); }
+  100% { -webkit-transform: scale(6.0); transform: scale(6.0); }
 }
 
 @-webkit-keyframes fadein {
