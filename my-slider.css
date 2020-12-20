@@ -11,7 +11,7 @@
   cursor: default;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.1);
-  -webkit-animation: ism-fadein 3s;
+  -webkit-animation: ism-fadein 13s;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -140,7 +140,7 @@ a.ism-caption:hover {
 .ism-slider .ism-radios {
   position: absolute;
   -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
-  z-index: 12;
+  z-index: 6;
   bottom: 5px;
   left: 0;
   right: 0;
