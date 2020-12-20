@@ -118,11 +118,11 @@ a.ism-caption:hover {
 }
 
 .ism-caption-0 {
-  z-index: 6;
+  z-index: 12;
 }
 
 .ism-caption-1 {
-  z-index: 8;
+  z-index: 12;
 }
 
 .ism-caption-2 {
@@ -141,12 +141,12 @@ a.ism-caption:hover {
   position: absolute;
   -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
   z-index: 12;
-  bottom: 5px;
+  bottom: 11px;
   left: 0;
   right: 0;
   width: auto;
   background-color: rgba(255, 255, 255, 0.0);
-  padding: 0 7px;
+  padding: 0 9px;
   height: 0;
   overflow: visible;
 }
@@ -224,7 +224,7 @@ p.ism-badge a.ism-link:hover {
 }
 @keyframes zoomin {
   0% { -webkit-transform: scale(1.0); transform: scale(2.0); }
-  100% { -webkit-transform: scale(6.0); transform: scale(6.0); }
+  100% { -webkit-transform: scale(11.0); transform: scale(11.0); }
 }
 
 @-webkit-keyframes fadein {
