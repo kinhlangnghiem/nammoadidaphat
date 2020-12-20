@@ -80,7 +80,7 @@
   border: none;
   outline: none;
   text-align:center;
-  z-index: 6;
+  z-index: 12;
   cursor: pointer;
   padding: 0;
   background-repeat: no-repeat;
@@ -140,7 +140,7 @@ a.ism-caption:hover {
 .ism-slider .ism-radios {
   position: absolute;
   -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
-  z-index: 6;
+  z-index: 12;
   bottom: 5px;
   left: 0;
   right: 0;
@@ -214,8 +214,8 @@ p.ism-badge a.ism-link:hover {
 }
 
 .ism-zoom-in {
-  -webkit-animation: zoomin 0.99s linear 1;
-  animation: zoomin 0.99s linear 1;
+  -webkit-animation: zoomin 0.81s linear 1;
+  animation: zoomin 0.81s linear 1;
 }
 
 @-webkit-keyframes zoomin {
@@ -253,8 +253,8 @@ p.ism-badge a.ism-link:hover {
 }
 
 .ism-zoom-pan {
-  -webkit-animation: zoompan 40.0s linear 1;
-  animation: zoompan 40.0s linear 1;
+  -webkit-animation: zoompan 20.0s linear 1;
+  animation: zoompan 20.0s linear 1;
 }
 @-webkit-keyframes zoompan {
   0% { -webkit-transform: translate(0, 0) scale(1.0); transform: translate(0, 0) scale(1.0); }
@@ -268,8 +268,8 @@ p.ism-badge a.ism-link:hover {
 }
 
 .ism-zoom-rotate {
-  -webkit-animation: zoomrotate 40.0s linear 1;
-  animation: zoomrotate 40.0s linear 1;
+  -webkit-animation: zoomrotate 20.0s linear 1;
+  animation: zoomrotate 20.0s linear 1;
 }
 @-webkit-keyframes zoomrotate {
   0% { -webkit-transform: rotate(0) scale(1.0); transform: rotate(0) scale(1.0); }
@@ -386,15 +386,15 @@ p.ism-badge a.ism-link:hover {
 /* CAPTIONS */
 
 #my-slider .ism-slide-0 .ism-caption-0.ism-caption-anim {
-    -webkit-animation: fadein 0.5s; animation: fadein 0.5s;
+    -webkit-animation: fadein 0.9s; animation: fadein 0.9s;
 }
 
 #my-slider .ism-slide-0 .ism-caption-1.ism-caption-anim {
-    -webkit-animation: fadein 0.5s; animation: fadein 0.5s;
+    -webkit-animation: fadein 0.9s; animation: fadein 0.5s;
 }
 
 #my-slider .ism-slide-0 .ism-caption-2.ism-caption-anim {
-    -webkit-animation: fadein 0.5s; animation: fadein 0.5s;
+    -webkit-animation: fadein 0.9s; animation: fadein 0.5s;
 }
 
 #my-slider .ism-slide-1 .ism-caption-0.ism-caption-anim {
