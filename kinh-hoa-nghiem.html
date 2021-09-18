@@ -295,43 +295,43 @@ jQuery(function ($) {
     // initialize playlist and controls
     var index = 0,
     playing = false,
-    mediaPath = 'https://dl.dropboxusercontent.com/s/',
+    mediaPath = '',
     extension = '',
     tracks = [{
       "track": 1,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 1 ) ",
       "duration": "8:11:08",
-      "file": "uhsp4u4d3ftjer3/01-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai" },
+      "file": "https://www.googleapis.com/drive/v3/files/1chu60MMuM0-oB61v04zx7cBxHGGd14wB?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 2,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 2 )",
       "duration": "8:28:07",
-      "file": "17f834vnpwdbtrh/02-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai" },
+      "file": "https://www.googleapis.com/drive/v3/files/1bIJJuoaI_MhVvwDGIxylgMYT8R7No_xV?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 3,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 3 )",
       "duration": "8:35:07",
-      "file": "rqy4ejd8fjka6kw/03-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai" },
+      "file": "https://www.googleapis.com/drive/v3/files/1EQjVDW8DRqg8RFCmIb6Bk1ufwPx3fhPb?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 4,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 4 )",
       "duration": "7:19:39",
-      "file": "dngox8c626698k3/04-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai" },
+      "file": "https://www.googleapis.com/drive/v3/files/1iSQaHi9OOfHvF5tTxmLYnAJg_fzEmrvs?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 5,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 5 )",
       "duration": "8:22:34",
-      "file": "4pvwt17gmxyauin/05-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai%20" },
+      "file": "https://www.googleapis.com/drive/v3/files/1JDVI5v7p_unKe_nmaBE09Qhly0bcDf2p?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 6,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 6 ) ",
       "duration": "9:03:58",
-      "file": "0gt0xdl66uopbw6/06-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai" },
+      "file": "https://www.googleapis.com/drive/v3/files/1W0aOesoo3EibTcSbOMCEC-XaTfrHBILY?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 7,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 7 ) ",
       "duration": "11:59:59",
-      "file": "85tw1xppm0rsl8f/07-Kinh-Dai-Phuong-Quang-Phat-1-HT-Tuyen-Hoa-Giang-Giai" },
+      "file": "https://www.googleapis.com/drive/v3/files/1JsTyDAJg74MlKRg7gLAgLtVQnwF-zQIO?alt=media&key=AIzaSyCq3zkMppr0GGr3QFl1gfJ7B3LEQ_vdjjM" },
     {
       "track": 8,
       "name": "Kinh Đại Phương Quảng Phật -HT. Tuyên Hóa ( Tập 8 ) ",
